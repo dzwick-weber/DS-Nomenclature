@@ -3,6 +3,7 @@
 # and open the template in the editor.
 # This post might help us figure out mail: https://stackoverflow.com/questions/47247952/send-email-on-testing-docker-container-with-php-and-sendmail
 FROM php:8.2-apache-bookworm
+RUN a2dismod mpm_event mpm_worker || true && a2enmod mpm_prefork
 
 RUN docker-php-ext-install pdo pdo_mysql
 
