@@ -5,14 +5,14 @@
     $id = (int) $_SESSION['id'];
     $totalxp = filter_var($_POST['totalxp'] , FILTER_VALIDATE_INT);
     $jobxp = filter_var($_POST['jobxp'] , FILTER_VALIDATE_INT);
-    $education = filter_var($_POST['education'] , FILTER_SANITIZE_STRING);
-    $institution = filter_var($_POST['institution'] , FILTER_SANITIZE_STRING);
-    $major = filter_var($_POST['major'] , FILTER_SANITIZE_STRING);
-    $degree = filter_var($_POST['degree'] , FILTER_SANITIZE_STRING);
-    $year = filter_var($_POST['year'] , FILTER_SANITIZE_STRING);
-    $gpa = filter_var($_POST['gpa'] , FILTER_SANITIZE_STRING);
-    $origin = filter_var($_POST['origin'] , FILTER_SANITIZE_STRING);
-    $language = filter_var($_POST['language'] , FILTER_SANITIZE_STRING);
+    $education = filter_var($_POST['education'] , FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $institution = filter_var($_POST['institution'] , FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $major = filter_var($_POST['major'] , FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $degree = filter_var($_POST['degree'] , FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $year = filter_var($_POST['year'] , FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $gpa = filter_var($_POST['gpa'] , FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $origin = filter_var($_POST['origin'] , FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $language = filter_var($_POST['language'] , FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $fluency = filter_var($_POST['fluency'] , FILTER_VALIDATE_INT);
     error_log("fluency: " . $fluency);
     if (empty($fluency)) {
@@ -36,7 +36,7 @@
     $speech = isset($_POST['speech']) ? 1 : 0;
     $other = isset($_POST['other']) ? 1 : 0;
 	if(array_key_exists('otherDescription',$_POST)) {
-		$otherDescription = filter_var($_POST['otherDescription'], FILTER_SANITIZE_STRING);
+		$otherDescription = filter_var($_POST['otherDescription'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 		if(empty($otherDescription)){
 			$otherDescription="";
 		}
