@@ -2,7 +2,7 @@
 # To change this template file, choose Tools | Templates
 # and open the template in the editor.
 # This post might help us figure out mail: https://stackoverflow.com/questions/47247952/send-email-on-testing-docker-container-with-php-and-sendmail
-FROM php:8.2-fpm-bookworm
+FROM php:8.2-apache-bookworm
 
 RUN docker-php-ext-install pdo pdo_mysql
 
