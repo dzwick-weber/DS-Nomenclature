@@ -28,7 +28,7 @@ services:
     container_name: php
     build:
       context: .
-      dockerfile: ./conf/php/PHP.Dockerfile
+      dockerfile: Dockerfile
     environment:
         - MYSQL_USER
         - MYSQL_PASSWORD
