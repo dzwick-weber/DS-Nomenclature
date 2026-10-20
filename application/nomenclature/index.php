@@ -7,7 +7,7 @@
 ?>
 
     <div class="container-fluid">
-      <h1>Toward Data Science for All</h1>
+      <h1>Data Science Coding Language Replication Study</h1>
       <h4>Welcome to the language study task administration site. We thank you for your interest in helping advance the science of programming language design. The study is conducted using scientific methods and it is important to adhere to the guidelines in your participation.</h4>
       <br>
       <div class="panel panel-default">

@@ -45,7 +45,7 @@
 
             <div class="form-group">
               <label for="institution">At what institution are you completing this study?</label>
-              <input type="text" class="form-control input-md" name="institution" required>
+              <input type="text" class="form-control input-md" name="institution" value="Weber State University" required>
               <p class="comment">Type "none" if not affiliated or in school.</p>
             </div>
 
