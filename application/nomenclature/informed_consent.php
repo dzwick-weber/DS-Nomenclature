@@ -59,7 +59,7 @@
       <form role="form" action="code/accept_consent.php" method="post">
         <div class="form-group">
           <h4>Participant Consent</h4>
-          <p>I have read the above information and agree to participate in this study. I have been able to ask questions about the research study. I am at least 18 years of age. A copy of this form is available at the following link: <a target="_blank" href="https://drive.google.com/file/d/13YuCCPcWKpvDjmIO5MIK9PO2CBT686T8/view?usp=sharing">Publicly Shared Consent Form.pdf</a>.</p>
+          <p>I have read the above information and agree to participate in this study. I have been able to ask questions about the research study. I am at least 18 years of age. A copy of this form is available at the following link: <a target="_blank" href="documents/InformedConsent.pdf">Informed Consent Form.pdf</a>.</p>
           <p>You will be presented with a button to Accept/Decline at the bottom of the web form. If you click Accept, you will continue to the survey.</p>
           <button type="submit" class="btn btn-success bt-lg">I Accept</button>
           <button type="button" onclick="window.location.href = 'code/decline_consent.php'" class="btn btn-danger bt-lg">I Decline</button>
