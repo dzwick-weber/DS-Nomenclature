@@ -5,6 +5,10 @@
     $id = (int) $_SESSION['id'];
     $totalxp = filter_var($_POST['totalxp'] , FILTER_VALIDATE_INT);
     $jobxp = filter_var($_POST['jobxp'] , FILTER_VALIDATE_INT);
+    $dataCourses = filter_var($_POST['dataCourses'] , FILTER_VALIDATE_INT);
+    if ($dataCourses === false || $dataCourses === null) {
+      $dataCourses = 0;
+    }
     $education = filter_var($_POST['education'] , FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $institution = filter_var($_POST['institution'] , FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $major = filter_var($_POST['major'] , FILTER_SANITIZE_FULL_SPECIAL_CHARS);
@@ -47,7 +51,7 @@
 	}
     $_SESSION['year'] = $year;
     $uuid = $_SESSION['uuid'];
-    insertSurvey1($id, $uuid, $totalxp, $jobxp, $education, $institution, $major, $degree, $year, $gpa, $origin, $language, $fluency, $disclosed, $attentionDeficit, $autism, $blind, $deaf, $health, $learning, $mentalHealth, $mobility, $speech, $other, $otherDescription);
+    insertSurvey1($id, $uuid, $totalxp, $jobxp, $dataCourses, $education, $institution, $major, $degree, $year, $gpa, $origin, $language, $fluency, $disclosed, $attentionDeficit, $autism, $blind, $deaf, $health, $learning, $mentalHealth, $mobility, $speech, $other, $otherDescription);
     
     insertTimeEvent($_SESSION['id'], $_SESSION['uuid'], 4);
 

@@ -170,12 +170,12 @@
     $statement->execute(array(':id' => $id, ':uuid' => $uuid, ':event' => $event, ':task' => $task));
   }
 
-  function insertSurvey1($id, $uuid, $totalxp, $jobxp, $education, $institution, $major, $degree, $year, $gpa, $origin, $language, $fluency, $disclosed, $attentionDeficit, $autism, $blind, $deaf, $health, $learning, $mentalHealth, $mobility, $speech, $other, $otherDescription) {
+  function insertSurvey1($id, $uuid, $totalxp, $jobxp, $dataCourses, $education, $institution, $major, $degree, $year, $gpa, $origin, $language, $fluency, $disclosed, $attentionDeficit, $autism, $blind, $deaf, $health, $learning, $mentalHealth, $mobility, $speech, $other, $otherDescription) {
     global $conn;
     
 	$sql = "INSERT INTO survey ";
-    $sql .= "(id, uuid, totalxp, jobxp, education, institution, major, degree, year, gpa, origin, language, fluency, disclosed, attentionDeficit, autism, blind, deaf, health, learning, mentalHealth, mobility, speech, other, otherDescription)";
-    $sql .= " VALUES ( :id, :uuid, :totalxp, :jobxp, :education, :institution, :major, :degree, :year, :gpa, :origin, :language, :fluency, :disclosed, :attentionDeficit, :autism, :blind, :deaf, :health, :learning, :mentalHealth, :mobility, :speech, :other, :otherDescription)";
+    $sql .= "(id, uuid, totalxp, jobxp, dataCourses, education, institution, major, degree, year, gpa, origin, language, fluency, disclosed, attentionDeficit, autism, blind, deaf, health, learning, mentalHealth, mobility, speech, other, otherDescription)";
+    $sql .= " VALUES ( :id, :uuid, :totalxp, :jobxp, :dataCourses, :education, :institution, :major, :degree, :year, :gpa, :origin, :language, :fluency, :disclosed, :attentionDeficit, :autism, :blind, :deaf, :health, :learning, :mentalHealth, :mobility, :speech, :other, :otherDescription)";
     
 	$statement = $conn->prepare($sql);
     $statement->execute(array(
@@ -183,6 +183,7 @@
       ':uuid' => $uuid,
       ':totalxp' => $totalxp,
       ':jobxp' => $jobxp,
+      ':dataCourses' => $dataCourses,
       ':education' => $education,
       ':institution' => $institution,
       ':major' => $major,
@@ -300,15 +301,22 @@
     $statement = $conn->prepare($sql);
     $statement->execute(array(':name' => $name, ':courseNum' => $courseNum, ':courseName' => $courseName, ':instructor' => $instructor, ':id' => $id));
   }
-  function insertFeedback($id, $comments, $stoodOutDifficult, $stoodOutEasier) {
+  function insertFeedback($id, $comments, $stoodOutDifficult, $stoodOutEasier, $namingApproach = "") {
     global $conn;
     $sql = "UPDATE survey SET ";
     $sql .= "stoodOutDifficult=:stoodOutDifficult, ";
     $sql .= "stoodOutEasier=:stoodOutEasier, ";
+    $sql .= "namingApproach=:namingApproach, ";
     $sql .= "comments=:comments ";
     $sql .= " WHERE id=:id";
     $statement = $conn->prepare($sql);
-    $statement->execute(array(':stoodOutDifficult' => $stoodOutDifficult, ':stoodOutEasier' => $stoodOutEasier, ':comments' => $comments, ':id' => $id));
+    $statement->execute(array(
+      ':stoodOutDifficult' => $stoodOutDifficult, 
+      ':stoodOutEasier' => $stoodOutEasier, 
+      ':namingApproach' => $namingApproach, 
+      ':comments' => $comments, 
+      ':id' => $id
+    ));
   }
   
   function insertTaskResponse($uuid, $task_order, $test_id, $method_order, $method_id, $response, $max) {

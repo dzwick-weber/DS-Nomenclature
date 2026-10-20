@@ -4,7 +4,12 @@ function SubmitFeedback() {
     $.ajax({
       url: 'code/validate_feedback.php',
       type: 'POST',
-      data: { 'stoodOutDifficult': $("#stoodOutDifficult").val(), 'stoodOutEasier': $("#stoodOutEasier").val(), 'comments': $("#comments").val()},
+      data: { 
+        'stoodOutDifficult': $("#stoodOutDifficult").val(), 
+        'stoodOutEasier': $("#stoodOutEasier").val(), 
+        'namingApproach': $("#namingApproach").val(), 
+        'comments': $("#comments").val()
+      },
       complete: function (response) {
         window.location.href = "finished.php";
       }
@@ -13,13 +18,16 @@ function SubmitFeedback() {
   </script>
   <div class="container">
     <h1>Final Feedback</h1>
-    <label for="totalxp">Was there anything about the syntax (not the study) that stood out as particularly difficult?</label>
+    <label for="stoodOutDifficult">Was there anything about the syntax (not the study) that stood out as particularly difficult?</label>
     <textarea class="form-control" rows=10 id="stoodOutDifficult"></textarea>
     <br>
-    <label for="totalxp">Was there anything about the syntax (not the study) that stood out to make these tasks easier</label>
+    <label for="stoodOutEasier">Was there anything about the syntax (not the study) that stood out to make these tasks easier</label>
     <textarea class="form-control" rows=10 id="stoodOutEasier"></textarea>
     <br>
-    <label for="totalxp">If you have any other comments or feedback, please type it here:</label>
+    <label for="namingApproach">If you were naming a new function for data analysis, what approach would be best?</label>
+    <textarea class="form-control" rows=10 id="namingApproach"></textarea>
+    <br>
+    <label for="comments">If you have any other comments or feedback, please type it here:</label>
     <textarea class="form-control" rows=10 id="comments"></textarea>
     <br>
 

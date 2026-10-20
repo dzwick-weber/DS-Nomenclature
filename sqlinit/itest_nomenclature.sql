@@ -152,6 +152,7 @@ CREATE TABLE `survey` (
   `uuid` varchar(60) DEFAULT NULL,
   `totalxp` int(11) DEFAULT NULL,
   `jobxp` int(11) DEFAULT NULL,
+  `dataCourses` int(11) DEFAULT NULL,
   `education` char(25) DEFAULT NULL,
   `institution` varchar(255) DEFAULT NULL,
   `major` varchar(255) DEFAULT NULL,
@@ -231,6 +232,7 @@ CREATE TABLE `survey` (
   `course24` char(10) DEFAULT NULL,
   `stoodOutDifficult` text,
   `stoodOutEasier` text,
+  `namingApproach` text,
   `comments` text,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;

@@ -21,6 +21,12 @@
               <input type="number" class="form-control input-md" name="jobxp" min="0" required>
               <p class="comment">Enter 0 if none.</p>
             </div>
+
+            <div class="form-group">
+              <label for="dataCourses">Generously, how many data-related courses have you taken?</label>
+              <input type="number" class="form-control input-md" name="dataCourses" min="0" required>
+              <p class="comment">Enter 0 if none.</p>
+            </div>
               
             <div class="form-group">
               <label for="education">What is your highest level of education?</label>
